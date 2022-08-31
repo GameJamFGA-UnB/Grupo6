@@ -1,18 +1,10 @@
 extends Camera2D
 
 var player
-var landscape
-var portrait
-
-var Player = Vector2()
-
-func find_player():
-	Player = get_node("Root/Scene/PlayerSprite").position
-	print(Player.x)
+var bobo
 
 func _ready():
-	player = get_node("Root/Scene/PlayerSprite")
+	player= get_node("/root/Node2D/Player")
 	
-
-func _physics_process(delta):
-	_ready()
+func _process(delta):
+	bobo=player.position.x
