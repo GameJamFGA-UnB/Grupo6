@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Si_certa.mp3-d6add11d2f9f8d4ea91b0df8125d83d3.mp3str"
+
+[deps]
+
+source_file="res://Assets_to_Test/Sound_Effects/Si_certa.mp3"
+dest_files=[ "res://.import/Si_certa.mp3-d6add11d2f9f8d4ea91b0df8125d83d3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

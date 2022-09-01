@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Assets_to_Test/goSign.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sources/O_Mago.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sources/Tile.png" type="Texture" id=4]
+[ext_resource path="res://Assets_to_Test/cello.png" type="Texture" id=5]
 [ext_resource path="res://CameraController.gd" type="Script" id=6]
 [ext_resource path="res://Assets_to_Test/spike.png" type="Texture" id=7]
 [ext_resource path="res://Assets_to_Test/ClearBackgroung.jpg" type="Texture" id=8]
@@ -43,6 +44,15 @@ points = PoolVector2Array( 15.8813, 15.8813, 0, 15.8813, 0, 0, 15.8813, 0 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 12.5, 21 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 10, 24.5 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 8.5, 24.5 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 8.5, 25 )
 
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 8, 5.6875 )
@@ -118,38 +128,6 @@ script = ExtResource( 6 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Enemy" type="KinematicBody2D" parent="Enemies"]
-position = Vector2( 607, 445 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Enemies/Enemy"]
-position = Vector2( 0, 1 )
-scale = Vector2( 0.101563, 0.0771485 )
-texture = ExtResource( 11 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy"]
-position = Vector2( -0.5, 2 )
-shape = SubResource( 8 )
-
-[node name="Enemy2" type="KinematicBody2D" parent="Enemies"]
-position = Vector2( 1565, 87 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Enemies/Enemy2"]
-position = Vector2( 0, 1 )
-scale = Vector2( 0.101563, 0.0771485 )
-texture = ExtResource( 11 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy2"]
-position = Vector2( -0.5, 2 )
-shape = SubResource( 8 )
-
 [node name="Enemy3" type="KinematicBody2D" parent="Enemies"]
 position = Vector2( 1183, 130 )
 script = ExtResource( 12 )
@@ -167,12 +145,11 @@ position = Vector2( -0.5, 2 )
 shape = SubResource( 8 )
 
 [node name="Enemy4" type="KinematicBody2D" parent="Enemies"]
-position = Vector2( 1222, 738 )
+position = Vector2( 1593, 89 )
 script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
-isLeft = false
 
 [node name="Sprite" type="Sprite" parent="Enemies/Enemy4"]
 position = Vector2( 0, 1 )
@@ -216,20 +193,53 @@ position = Vector2( -0.5, 2 )
 shape = SubResource( 8 )
 
 [node name="Enemy7" type="KinematicBody2D" parent="Enemies"]
-position = Vector2( 1116, 774 )
+position = Vector2( 1116, 766 )
 script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Sprite" type="Sprite" parent="Enemies/Enemy7"]
-position = Vector2( 0, 1 )
-scale = Vector2( 0.101563, 0.0771485 )
-texture = ExtResource( 11 )
+position = Vector2( -3.00008, 8.75 )
+scale = Vector2( 0.089844, 0.0620118 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy7"]
-position = Vector2( -0.5, 2 )
-shape = SubResource( 8 )
+position = Vector2( -3, 8.5 )
+shape = SubResource( 13 )
+
+[node name="Enemy" type="KinematicBody2D" parent="Enemies"]
+position = Vector2( 567, 454 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Enemies/Enemy"]
+position = Vector2( 0, 1 )
+scale = Vector2( 0.08, 0.062 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy"]
+position = Vector2( -0.5, 1.5 )
+shape = SubResource( 14 )
+
+[node name="Enemy2" type="KinematicBody2D" parent="Enemies"]
+position = Vector2( 1222, 742 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+isLeft = false
+
+[node name="Sprite" type="Sprite" parent="Enemies/Enemy2"]
+position = Vector2( 0, 1 )
+scale = Vector2( 0.08, 0.062 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemies/Enemy2"]
+position = Vector2( -0.5, 1 )
+shape = SubResource( 15 )
 
 [node name="Spikes" type="Node2D" parent="."]
 
@@ -444,7 +454,4 @@ shape = SubResource( 10 )
 position = Vector2( 236, 330 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 12 )
-frame = 1
 playing = true
-
-[connection signal="kill" from="Enemies/Enemy" to="Player" method="_on_Enemy_kill"]

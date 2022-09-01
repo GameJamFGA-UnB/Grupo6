@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Do_certa.ogg-03fd014ed8b92271d46fdd03d89440d8.oggstr"
+
+[deps]
+
+source_file="res://Assets_to_Test/Sound_Effects/Do_certa.ogg"
+dest_files=[ "res://.import/Do_certa.ogg-03fd014ed8b92271d46fdd03d89440d8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

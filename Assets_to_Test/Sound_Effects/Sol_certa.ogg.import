@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Sol_certa.ogg-370d5a7cc4387e92f9b1466c13e68836.oggstr"
+
+[deps]
+
+source_file="res://Assets_to_Test/Sound_Effects/Sol_certa.ogg"
+dest_files=[ "res://.import/Sol_certa.ogg-370d5a7cc4387e92f9b1466c13e68836.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
