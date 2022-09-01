@@ -28,8 +28,6 @@ func get_input():
 		$Sprite.flip_h = true 
 
 func die():
-	position.x = 10
-	position.y = 400
 	get_tree().change_scene("res://Control.tscn")
 	#emit_signal("hit")
 	#queue_free()
@@ -40,9 +38,14 @@ func _physics_process(delta):
 	if jumping and is_on_floor():
 		jumping = false
 	velocity = move_and_slide(velocity, Vector2(0, -1))
-	# var collision_info = move_and_collide(velocity * delta)
-	#if collision_info:
-	#	print(collision_info)
-	if position.y > 1000:
+	for i in get_slide_count():
+		var collision_info = get_slide_collision(i)
+		if collision_info.collider.name == "Door":
+			get_tree().change_scene("res://Boss.tscn")
+		elif collision_info.collider is KinematicBody2D or collision_info.collider is StaticBody2D:
+			die()
+		#elif collision_info.collider is RigidBody2D:
+		#	print("Venceu")
+	if position.y > 1500:
 		die()
 		
