@@ -29,8 +29,6 @@ func get_input():
 
 func die():
 	get_tree().change_scene("res://Control.tscn")
-	#emit_signal("hit")
-	#queue_free()
 
 func _physics_process(delta):
 	get_input()
@@ -44,8 +42,6 @@ func _physics_process(delta):
 			get_tree().change_scene("res://Boss.tscn")
 		elif collision_info.collider is KinematicBody2D or collision_info.collider is StaticBody2D:
 			die()
-		#elif collision_info.collider is RigidBody2D:
-		#	print("Venceu")
+			
 	if position.y > 1500:
 		die()
-		

@@ -1,10 +1,9 @@
 extends KinematicBody2D
 
 # Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 export (float) var turnTime = 20.0
 var time = 0
+signal kill
 
 export (bool) var isLeft = true
 export (int) var run_speed = 100
@@ -21,9 +20,7 @@ func _process(delta):
 	time += 0.1
 	if isLeft:
 		velocity.x -= run_speed
-		# position.x -= 1
 	else:
-		# position.x += 1
 		velocity.x += run_speed
 	if time > turnTime:
 		time = 0
@@ -31,3 +28,7 @@ func _process(delta):
 		$Sprite.flip_h = false if isLeft else true
 		
 	velocity = move_and_slide(velocity, Vector2(0, -1))
+	for i in get_slide_count():
+		var collision_info = get_slide_collision(i)
+		if "Enemy" in self.name and collision_info.collider.name == "Player":
+			collision_info.collider.die()
