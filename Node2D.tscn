@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Chefe do piano 3.png" type="Texture" id=2]
@@ -6,38 +6,17 @@
 [ext_resource path="res://Assets/Sources/Tile.png" type="Texture" id=4]
 [ext_resource path="res://Chefe do piano.png" type="Texture" id=5]
 [ext_resource path="res://CameraController.gd" type="Script" id=6]
-[ext_resource path="res://Assets/Sources/Mountains.png" type="Texture" id=7]
 [ext_resource path="res://Assets_to_Test/ClearBackgroung.jpg" type="Texture" id=8]
 [ext_resource path="res://Assets_to_Test/Parallax.png" type="Texture" id=9]
 [ext_resource path="res://Assets_to_Test/Pangaré-removebg-preview.png" type="Texture" id=10]
-
-[sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+[ext_resource path="res://Assets_to_Test/Ninja-removebg-preview.png" type="Texture" id=11]
+[ext_resource path="res://Enemy.gd" type="Script" id=12]
+[ext_resource path="res://Assets_to_Test/Sound_Effects/jump.wav" type="AudioStream" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 15.8813, 15.8813, 0, 15.8813, 0, 0, 15.8813, 0 )
 
 [sub_resource type="TileSet" id=2]
-0/name = "tile_0007.png 0"
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 16, 16 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 1 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
 1/name = "Tile.png 1"
 1/texture = ExtResource( 4 )
 1/tex_offset = Vector2( 0, 0 )
@@ -76,6 +55,9 @@ extents = Vector2( 15, 14.5 )
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 58, 64 )
 
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 12.5, 21 )
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -101,6 +83,10 @@ texture = ExtResource( 3 )
 position = Vector2( -1, -10 )
 shape = SubResource( 3 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource( 13 )
+volume_db = -20.0
+
 [node name="Boss" type="KinematicBody2D" parent="."]
 position = Vector2( 1716, 461 )
 __meta__ = {
@@ -123,16 +109,6 @@ position = Vector2( 511, 297 )
 scale = Vector2( 1.63578, 1.6117 )
 texture = ExtResource( 8 )
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( -411, -129 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 136, 206 )
-texture = ExtResource( 7 )
-
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2( 512, 169 )
 motion_mirroring = Vector2( 200, 0 )
@@ -150,6 +126,7 @@ limit_smoothed = true
 script = ExtResource( 6 )
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2( 2, 1 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 position = Vector2( 1841, 281 )
@@ -167,3 +144,19 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 position = Vector2( -208, 129 )
 shape = SubResource( 7 )
+
+[node name="Enemy" type="KinematicBody2D" parent="."]
+position = Vector2( 607, 445 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Enemy"]
+position = Vector2( 0, 1 )
+scale = Vector2( 0.101563, 0.0771485 )
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+position = Vector2( -0.5, 2 )
+shape = SubResource( 8 )

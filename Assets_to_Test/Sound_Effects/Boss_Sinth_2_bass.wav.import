@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Boss_Sinth_2_bass.wav-efdcac6a1c8063a4e5e37cc439d61398.sample"
+
+[deps]
+
+source_file="res://Assets_to_Test/Sound_Effects/Boss_Sinth_2_bass.wav"
+dest_files=[ "res://.import/Boss_Sinth_2_bass.wav-efdcac6a1c8063a4e5e37cc439d61398.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
