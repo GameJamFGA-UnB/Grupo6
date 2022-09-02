@@ -21,3 +21,6 @@ Este jogo é sobre um musica que se perde em um mundo dos sonhos onde um louco m
 
 - [Gabriel Azevedo Batalha](https://github.com/Gabriel-Azevedo-Batalha)
 - [Helder Lourenço de Abreu Marques](https://github.com/F1reFinger)
+- [Hélio Camelo](https://github.com/heliocamelo)
+- [Pedro Caldeira](https://github.com/PedroMoraes39)
+- [Samuel Castro](https://github.com/SamuelCastro7)
