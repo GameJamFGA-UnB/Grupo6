@@ -18,10 +18,10 @@ func _process(delta):
 		var collision_info = get_slide_collision(i)
 		if collision_info.collider is TileMap:
 			position.y = y
-			position.x = rng.randf_range(18, 800)
+			position.x = rng.randf_range(18, 1032)
 			$Sound.play()
 		elif collision_info.collider.name == "Player":
 			collision_info.collider.die()
-		elif "Projectile" in collision_info.collider.name:
+		elif "Projectile" in collision_info.collider.name or  "End" in collision_info.collider.name:
 			self.add_collision_exception_with(collision_info.collider)
 			collision_info = get_slide_collision(i)
