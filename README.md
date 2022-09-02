@@ -1,8 +1,8 @@
 # Musichaos
-Jogo de plataforma desenvolvido para GameJamFGA-UnB onde o jogador controla um feiticeiro em tentativa de impedir o pior pianista do mundo.
+This Game is about a musician lost in his dream words where an mad conductor stole instruments sounds and only you can bring it back. this is a project made for Gamejam at University of Brasilia.
 
-Link para o Itch.io: [Musichaos](<https://helld3r.itch.io/musicaos>)
-## Controles:
-- Setas: Movimentação
-- Espaço: Pular
-- Enter: Confirmar
+Link to Itch.io: [Musichaos](<https://helld3r.itch.io/musicaos>)
+## Controls:
+- Arrows: Movement
+- Space: Jump
+- Enter: Confirma
