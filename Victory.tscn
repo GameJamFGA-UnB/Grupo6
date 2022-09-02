@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Victory.gd" type="Script" id=1]
+[ext_resource path="res://Assets_to_Test/Victory_Text.png" type="Texture" id=2]
+[ext_resource path="res://Assets_to_Test/Continue.png" type="Texture" id=3]
+[ext_resource path="res://Assets_to_Test/BackGround.jpg" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), null ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 500, 380 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 514, 206 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 1 )
+playing = true
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 508, 450 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )

@@ -36,7 +36,9 @@ func _physics_process(delta):
 	for i in get_slide_count():
 		var collision_info = get_slide_collision(i)
 		if collision_info.collider.name == "Door":
-			get_tree().change_scene("res://Boss.tscn")
+			get_tree().change_scene("res://Transition.tscn")
+		elif collision_info.collider.name == "End":
+			get_tree().change_scene("res://Victory.tscn")	
 		elif collision_info.collider is KinematicBody2D or collision_info.collider is StaticBody2D:
 			$Death.play()
 			die()
