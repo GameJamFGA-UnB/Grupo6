@@ -41,6 +41,7 @@ func _physics_process(delta):
 		if collision_info.collider.name == "Door":
 			get_tree().change_scene("res://Boss.tscn")
 		elif collision_info.collider is KinematicBody2D or collision_info.collider is StaticBody2D:
+			$Death.play()
 			die()
 			
 	if position.y > 1500:
