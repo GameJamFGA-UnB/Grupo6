@@ -5,4 +5,4 @@ Link to Itch.io: [Musichaos](<https://helld3r.itch.io/musicaos>)
 ## Controls:
 - Arrows: Movement
 - Space: Jump
-- Enter: Confirma
+- Enter: Confirm
