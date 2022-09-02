@@ -1,8 +1,6 @@
 extends KinematicBody2D
 
 # Declare member variables here. Examples:
-signal kill
-
 var gravity = 10000
 export (float) var speed = 1
 var y = position.y
@@ -10,7 +8,6 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	rng.randomize()
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

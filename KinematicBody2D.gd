@@ -6,9 +6,6 @@ export (int) var gravity = 1200
 
 var velocity = Vector2()
 var jumping = false
-var life = 3
-
-signal hit
 
 func get_input():
 	velocity.x = 0

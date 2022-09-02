@@ -228,3 +228,4 @@ shape = SubResource( 12 )
 [node name="Sound" type="AudioStreamPlayer2D" parent="Projectiles/ProjectileSol"]
 stream = ExtResource( 17 )
 volume_db = -20.0
+pitch_scale = 4.0

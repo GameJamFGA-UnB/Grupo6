@@ -68,7 +68,7 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( -1, 0 )
@@ -454,5 +454,4 @@ shape = SubResource( 10 )
 position = Vector2( 236, 330 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 12 )
-frame = 1
 playing = true

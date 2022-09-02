@@ -3,7 +3,6 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 export (float) var turnTime = 20.0
 var time = 0
-signal kill
 
 export (bool) var isLeft = true
 export (int) var run_speed = 100

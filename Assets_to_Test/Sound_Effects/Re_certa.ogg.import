@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Re_certa.ogg-e722c274095d52966f57d082e067f3d8.oggstr
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

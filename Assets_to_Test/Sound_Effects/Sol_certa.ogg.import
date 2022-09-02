@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Sol_certa.ogg-370d5a7cc4387e92f9b1466c13e68836.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
